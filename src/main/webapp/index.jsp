@@ -14,34 +14,36 @@
         <title>Welcome page</title>
     </head>
     <body>
-        <h1>Welcome to Sem 2</h1>
+        <h1>Velkommen til projekt siden.</h1>
+        <br>
+        <h2>Login eller registrer dig som bruger:</h2>
         
         <table>
-            <tr><td>Login</td>
+            <tr>
                 <td>
                     <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="login">
+                        <input type="hidden" name="target" value="login">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email">
                         <br>
                         Password:<br>
-                        <input type="password" name="password" value="sesam">
+                        <input type="password" name="password">
                         <br>
                         <input type="submit" value="Submit">
                     </form>
                 </td>
-                <td>Or Register</td>
+
                 <td>
                     <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="register">
+                        <input type="hidden" name="target" value="register">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email" value="">
                         <br>
                         Password:<br>
-                        <input type="password" name="password1" value="sesam">
+                        <input type="password" name="password1" value="">
                         <br>
                         Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
+                        <input type="password" name="password2" value="">
                         <br>
                         <input type="submit" value="Submit">
                     </form>
@@ -50,19 +52,5 @@
         </table>
 
 
-<%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>
-<%--        <% String error = (String) request.getAttribute( "error");--%>
-<%--           if ( error != null) { --%>
-<%--               out.println("<H2>Error!!</h2>");--%>
-<%--               out.println(error);--%>
-<%--           }--%>
-<%--        %>--%>
-
-        <c:if test = "${requestScope.error!= null}" >
-
-           <h2>Error ! </h2>
-            ${requestScope.error}
-
-        </c:if>
     </body>
 </html>

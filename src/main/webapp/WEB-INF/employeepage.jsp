@@ -14,10 +14,40 @@
     <body>
         
 
-        <h1>Hello ${sessionScope.email} </h1>
+        <h1>Goddag: "${sessionScope.email}" </h1>
+
+        Du er nu logget ind som medarbejder.
+    <br>
+        <br>
+        <h2>Vælg kundeoversigt:</h2>
+    <br>
+        <form name="oversigt" action="FrontController" method="POST">
+            <input type="hidden" name="target" value="oversigt">
+            <input type="submit" value="Kundeoversigt">
+        </form>
+    <br>
+        <br>
+        <br>
+        <h2>Vælg nulstil kundes kodeord:</h2>
+        <form name="resetPw" action="FrontController" method="POST">
+            <input type="hidden" name="target" value="resetPw">
+            ID:<br>
+            <input type="hidden" name="id" value="${element.id}">
+            <br>
+            Password:<br>
+            <input type="password" name="pw">
+            <input type="hidden" name="pw" value="${element.pw}">
+            <br>
+            <br>
+            <input type="submit" value="Nulstil">
+
+        </form>
+        <br>
+        <form name="logout" action="FrontController" method="POST">
+            <input type="submit" value="Logout">
+        </form>
+        <br>
 
 
-
-        You are now logged in as a EMPLOYEE of our wonderful site.
     </body>
 </html>

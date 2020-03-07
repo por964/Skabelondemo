@@ -9,17 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer home page</title>
+        <title>Kundeside</title>
     </head>
     <body>
 
 
-        <h1>Hello ${sessionScope.email} </h1>
+        <h1>Goddag: "${sessionScope.email}" </h1>
 
+        <h2>Du er nu logget ind som kunde.</h2>
 
+        <form name="logout" action="FrontController" method="POST">
+            <input type="submit" value="Logout">
+            <input type="hidden" name="taget" value="logout">
 
-
-
-        You are now logged in as a customer of our wonderful site.
+        </form>
     </body>
 </html>

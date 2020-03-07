@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  The purpose of UserMapper is to...
@@ -28,6 +29,20 @@ public class UserMapper {
             ids.next();
             int id = ids.getInt( 1 );
             user.setId( id );
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+    public static void resetPw(User user) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "update users set password = ? where id = ?;";
+            PreparedStatement ps = con.prepareStatement( SQL);
+            ps.setInt( 1, user.getId());
+            ps.setString(2, user.getPassword());
+
+            ps.execute();
+
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }
@@ -54,6 +69,26 @@ public class UserMapper {
         } catch ( ClassNotFoundException | SQLException ex ) {
             throw new LoginSampleException(ex.getMessage());
         }
+    }
+    public static ArrayList<String> getCustomers () throws SQLException, ClassNotFoundException {
+
+        ArrayList<String> customers = new ArrayList<>();
+        String SQL = "SELECT email FROM useradmin.users where role='customer'";
+        try {
+            Connection con = Connector.connection();
+            PreparedStatement ps = con.prepareStatement( SQL );
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String custy = rs.getString("email");
+                customers.add(custy);
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("Fejl i forbindelse til database.");
+            e.printStackTrace();
+        }
+        return customers;
     }
 
 }
