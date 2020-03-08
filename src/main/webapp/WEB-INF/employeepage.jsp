@@ -27,6 +27,15 @@
         </form>
     <br>
         <br>
+        <h2>Slet kunde som bruger, indtast ID:</h2>
+        <td>
+            <form name="deleteuser" action="FrontController" method="POST">
+                <input type="hidden" name="target" value="deleteuser">
+                ID:<br>
+                <input type="id" name="id">
+                <input type="submit" value="Submit">
+            </form>
+        </td>
         <br>
         <h2>Vælg nulstil kundes kodeord til "123":</h2>
         <td>

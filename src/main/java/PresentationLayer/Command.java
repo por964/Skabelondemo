@@ -19,6 +19,7 @@ abstract class Command {
         commands.put("logout", new Logout());
         commands.put("resetpw", new ResetPw());
         commands.put("newemployee", new NewEmployee());
+        commands.put("deleteuser", new DeleteCustomer());
     }
 
     static Command from( HttpServletRequest request ) {
