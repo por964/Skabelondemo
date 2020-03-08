@@ -107,5 +107,17 @@ public class UserMapper {
         }
         return customers;
     }
+    public static void deleteCustomer(int id) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM users WHERE id=?;";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new LoginSampleException( ex.getMessage() );
+        }
+    }
 
 }

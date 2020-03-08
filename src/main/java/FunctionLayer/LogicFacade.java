@@ -34,5 +34,8 @@ public class LogicFacade {
     public static void resetPw(int id, String newpw) throws LoginSampleException {
         UserMapper.resetPw(id, newpw);
     }
+    public static void deleteCustomer(int id) throws LoginSampleException {
+        UserMapper.deleteCustomer(id);
+    }
 
 }
