@@ -39,14 +39,33 @@
         </td>
             <br>
             <br>
+        <h2>Opret ny medarbejder:</h2>
+        <td>
+            <form name="newemployee" action="FrontController" method="POST">
+                <input type="hidden" name="target" value="newemployee">
+                Email:<br>
+                <input type="text" name="email" value="">
+                <br>
+                Password:<br>
+                <input type="password" name="password1" value="">
+                <br>
+                Retype Password:<br>
+                <input type="password" name="password2" value="">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </td>
+            <br>
             <br>
 
-
-
+        <h2>Vælg at logge ud:</h2>
         <br>
+        <td>
+
         <form name="logout" action="FrontController" method="POST">
             <input type="submit" value="Logout">
         </form>
+            </td>
         <br>
 
 

@@ -34,8 +34,8 @@
                 </td>
 
                 <td>
-                    <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="target" value="register">
+                    <form name="newcustomer" action="FrontController" method="POST">
+                        <input type="hidden" name="target" value="newcustomer">
                         Email:<br>
                         <input type="text" name="email" value="">
                         <br>

@@ -21,6 +21,11 @@ public class LogicFacade {
         UserMapper.createUser( user );
         return user;
     }
+    public static User createEmpl( String email, String password ) throws LoginSampleException {
+        User user = new User(email, password, "employee");
+        UserMapper.createEmpl( user );
+        return user;
+    }
 
     public static ArrayList<String> getCustomers () throws SQLException, ClassNotFoundException {
         //System.out.println(getCustomers());
