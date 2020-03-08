@@ -15,11 +15,11 @@ public class ResetPw extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException, SQLException, ClassNotFoundException {
         HttpSession session = request.getSession();
         String id = request.getParameter("id");
-        String password = request.getParameter("password");
-        String newpw = "123";
+        String newpw = request.getParameter("newpw");
+        //String newpw = "123";
         LogicFacade.resetPw(Integer.parseInt(id),newpw);
         session.setAttribute( "id", id);
-        session.setAttribute("password", newpw);
+        session.setAttribute("newpw", newpw);
         return "employeepage";
     }
 }

@@ -13,29 +13,29 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome page</title>
     </head>
-    <body>
+    <body bgcolor="#ADD8E6">
         <h1>Velkommen til projekt siden.</h1>
         <br>
         <h2>Login eller registrer dig som bruger:</h2>
         
-        <table>
+        <table style="width:100%">
             <tr>
                 <td>
                     <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="target" value="login">
+                        <input type="hidden" name="target" value="login" align=left">
                         Email:<br>
                         <input type="text" name="email">
                         <br>
                         Password:<br>
                         <input type="password" name="password">
                         <br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Login">
                     </form>
                 </td>
 
                 <td>
                     <form name="newcustomer" action="FrontController" method="POST">
-                        <input type="hidden" name="target" value="newcustomer">
+                        <input type="hidden" name="target" value="newcustomer" align=left">
                         Email:<br>
                         <input type="text" name="email" value="">
                         <br>
@@ -45,7 +45,7 @@
                         Retype Password:<br>
                         <input type="password" name="password2" value="">
                         <br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Opret">
                     </form>
                 </td>
             </tr>

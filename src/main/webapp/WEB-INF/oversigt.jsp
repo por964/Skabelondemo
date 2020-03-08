@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body bgcolor="#778899">
 
 <br>
 <br>
@@ -35,7 +35,7 @@ ${requestScope.customers}
 
 </c:forEach>
 <form name="logout" action="FrontController" method="POST">
-    <input type="submit" value="Logout">
+    <input type="submit" value="Logout" align="left">
 </form>
 
 </body>

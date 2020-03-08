@@ -15,12 +15,7 @@ public class Logout extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException, SQLException, ClassNotFoundException {
 
         HttpSession session = request.getSession();
-        //request.setAttribute("user",null);
-        //request.setAttribute("role",null);
-        //request.setAttribute("email",null);
-        //request.getSession().invalidate();
         session.invalidate();
-
         return "index";
     }
 }

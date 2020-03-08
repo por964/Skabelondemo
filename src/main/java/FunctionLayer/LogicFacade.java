@@ -28,7 +28,6 @@ public class LogicFacade {
     }
 
     public static ArrayList<String> getCustomers () throws SQLException, ClassNotFoundException {
-        //System.out.println(getCustomers());
         return UserMapper.getCustomers();
     }
     public static void resetPw(int id, String newpw) throws LoginSampleException {

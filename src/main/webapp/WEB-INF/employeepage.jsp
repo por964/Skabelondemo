@@ -11,19 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Employee home page</title>
     </head>
-    <body>
+    <body bgcolor="#87CEFA">
         
 
         <h1>Goddag: "${sessionScope.email}" </h1>
 
         Du er nu logget ind som medarbejder.
+
     <br>
         <br>
         <h2>Vælg kundeoversigt:</h2>
     <br>
         <form name="oversigt" action="FrontController" method="POST">
             <input type="hidden" name="target" value="oversigt">
-            <input type="submit" value="Kundeoversigt">
+            <input type="submit" value="Kundeoversigt" align="left">
         </form>
     <br>
         <br>
@@ -32,19 +33,23 @@
             <form name="deleteuser" action="FrontController" method="POST">
                 <input type="hidden" name="target" value="deleteuser">
                 ID:<br>
-                <input type="id" name="id">
-                <input type="submit" value="Submit">
+                <input type="text" name="id" value="${element.id}">
+                <input type="submit" value="Delete" align="left">
             </form>
         </td>
         <br>
-        <h2>Vælg nulstil kundes kodeord til "123":</h2>
+        <h2>Vælg nulstil kundes kodeord:</h2>
         <td>
-                    <form name="resetpw" action="FrontController" method="POST">
+            <form name="resetpw" action="FrontController" method="POST">
                 <input type="hidden" name="target" value="resetpw">
                 ID:<br>
-                <input type="id" name="id">
-                        <input type="submit" value="Submit">
-        </form>
+                <input type="text" name="id" value="${element.id}" align="left">
+                <br>
+                New password:<br>
+                <input type="password" name="newpw" value="${element.newpw}">
+                <br>
+                <input type="submit" value="Reset" align="left">
+            </form>
         </td>
             <br>
             <br>
@@ -53,15 +58,15 @@
             <form name="newemployee" action="FrontController" method="POST">
                 <input type="hidden" name="target" value="newemployee">
                 Email:<br>
-                <input type="text" name="email" value="">
+                <input type="text" name="email" value="" align="left">
                 <br>
                 Password:<br>
-                <input type="password" name="password1" value="">
+                <input type="password" name="password1" value="" align="left">
                 <br>
                 Retype Password:<br>
                 <input type="password" name="password2" value="">
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Opret" align="left">
             </form>
         </td>
             <br>
@@ -72,7 +77,7 @@
         <td>
 
         <form name="logout" action="FrontController" method="POST">
-            <input type="submit" value="Logout">
+            <input type="submit" value="Logout" align="left">
         </form>
             </td>
         <br>
