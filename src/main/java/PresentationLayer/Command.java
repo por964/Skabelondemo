@@ -17,7 +17,7 @@ abstract class Command {
         commands.put( "register", new Register() );
         commands.put("oversigt", new Oversigt());
         commands.put("logout", new Logout());
-        commands.put("resetPw",new ResetPw());
+        commands.put("resetpw", new ResetPw());
     }
 
     static Command from( HttpServletRequest request ) {

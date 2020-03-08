@@ -21,15 +21,13 @@ public class LogicFacade {
         UserMapper.createUser( user );
         return user;
     }
-    /*public static void resetPw(String pw, int id) throws LoginSampleException {
-        UserMapper.resetPw(pw, id);
-    }*/
+
     public static ArrayList<String> getCustomers () throws SQLException, ClassNotFoundException {
         //System.out.println(getCustomers());
         return UserMapper.getCustomers();
     }
-    public static void resetPw(User user) throws LoginSampleException {
-        UserMapper.resetPw(user);
+    public static void resetPw(int id, String newpw) throws LoginSampleException {
+        UserMapper.resetPw(id, newpw);
     }
 
 }

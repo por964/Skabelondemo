@@ -28,20 +28,21 @@
     <br>
         <br>
         <br>
-        <h2>Vælg nulstil kundes kodeord:</h2>
-        <form name="resetPw" action="FrontController" method="POST">
-            <input type="hidden" name="target" value="resetPw">
-            ID:<br>
-            <input type="hidden" name="id" value="${element.id}">
-            <br>
-            Password:<br>
-            <input type="password" name="pw">
-            <input type="hidden" name="pw" value="${element.pw}">
-            <br>
-            <br>
-            <input type="submit" value="Nulstil">
-
+        <h2>Vælg nulstil kundes kodeord til "123":</h2>
+        <td>
+                    <form name="resetpw" action="FrontController" method="POST">
+                <input type="hidden" name="target" value="resetpw">
+                ID:<br>
+                <input type="id" name="id">
+                        <input type="submit" value="Submit">
         </form>
+        </td>
+            <br>
+            <br>
+            <br>
+
+
+
         <br>
         <form name="logout" action="FrontController" method="POST">
             <input type="submit" value="Logout">

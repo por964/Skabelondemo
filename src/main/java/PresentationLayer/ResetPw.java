@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,14 +13,13 @@ public class ResetPw extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException, SQLException, ClassNotFoundException {
-
-        String id = request.getParameter("id");
-
         HttpSession session = request.getSession();
-
-        session.setAttribute("pw", id);
-
-
-        return null;
+        String id = request.getParameter("id");
+        String password = request.getParameter("password");
+        String newpw = "123";
+        LogicFacade.resetPw(Integer.parseInt(id),newpw);
+        session.setAttribute( "id", id);
+        session.setAttribute("password", newpw);
+        return "employeepage";
     }
 }

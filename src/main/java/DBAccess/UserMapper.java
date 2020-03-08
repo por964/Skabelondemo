@@ -33,15 +33,15 @@ public class UserMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
-    public static void resetPw(User user) throws LoginSampleException {
+    public static void resetPw(int id, String newpw) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
             String SQL = "update users set password = ? where id = ?;";
-            PreparedStatement ps = con.prepareStatement( SQL);
-            ps.setInt( 1, user.getId());
-            ps.setString(2, user.getPassword());
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setString( 1, newpw);
+            ps.setString(2, String.valueOf(id));
 
-            ps.execute();
+            ps.executeUpdate();
 
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
